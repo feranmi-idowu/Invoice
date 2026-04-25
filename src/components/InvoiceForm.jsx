@@ -37,7 +37,7 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
     const newItem = {
       id: Date.now(), // Date.now() gives a unique number — good enough for IDs here
       description: '',
-      qty: 1,
+      quantity: 1,
       price: 0,
     }
     setItems([...items, newItem]) // spread existing items, add the new one at the end
@@ -170,7 +170,7 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
         {/* Column headers */}
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 32px', gap: '8px', marginBottom: '6px' }}>
           <span className="colHeader">Description</span>
-          <span className="colHeader">Qty</span>
+          <span className="colHeader">Quantity</span>
           <span className="colHeader">Price (₦)</span>
           
         </div>
@@ -192,8 +192,8 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
               className="inputStyle"
               type="number"
               min="1"
-              value={item.qty}
-              onChange={e => handleItemChange(item.id, 'qty', Number(e.target.value))}
+              value={item.quantity}
+              onChange={e => handleItemChange(item.id, 'quantity', Number(e.target.value))}
             />
 
             <input

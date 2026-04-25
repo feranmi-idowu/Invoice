@@ -6,7 +6,7 @@ function InvoicePreview({ business, client, items, logo }) {
   // Calculate the grand total.
   // reduce() loops through the items array and accumulates a single value (the total).
   // For each item: total so far + (price × quantity)
-  const total = items.reduce((sum, item) => sum + (item.price * item.qty), 0)
+  const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0)
 
   // toLocaleString() formats a number with commas: 180000 → "180,000"
   const formatMoney = (amount) => Number(amount).toLocaleString('en-NG')
@@ -71,7 +71,7 @@ function InvoicePreview({ business, client, items, logo }) {
           <thead>
             <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
               <th className="thStyle">Description</th>
-              <th className="thStyle" style={{ textAlign: 'center' }}>Qty</th>
+              <th className="thStyle" style={{ textAlign: 'center' }}>Quantity</th>
               <th className="thStyle" style={{ textAlign: 'right' }}>Total</th>
             </tr>
           </thead>
@@ -80,9 +80,9 @@ function InvoicePreview({ business, client, items, logo }) {
             {items.map(item => (
               <tr key={item.id} style={{ borderBottom: '1px solid #f7fafc' }}>
                 <td className="tdStyle">{item.description || '—'}</td>
-                <td className="tdStyle" style={{ textAlign: 'center' }}>{item.qty}</td>
+                <td className="tdStyle" style={{ textAlign: 'center' }}>{item.quantity}</td>
                 <td className="tdStyle" style={{ textAlign: 'right' }}>
-                  ₦{formatMoney(item.price * item.qty)}
+                  ₦{formatMoney(item.price * item.quantity)}
                 </td>
               </tr>
             ))}
