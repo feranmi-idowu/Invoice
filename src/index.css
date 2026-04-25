@@ -1,0 +1,191 @@
+/* src/index.css */
+
+/* This removes the default margin/padding browsers add to every page.
+   Without this, your app would have annoying white gaps around the edges. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* makes width calculations predictable */
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f4f6f9; /* light grey page background */
+  color: #111;
+  min-height: 100vh; /* makes the page fill the full screen height */
+}
+.app-layout {
+  max-Width: 1100px;   /* stops the layout from getting too wide on large screens*/
+  margin: 40px auto;  /* centres it on the page*/
+  padding: 0 20px;    /* breathing room on small screens*/
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns*/
+  gap: 24px;
+}
+@media screen and (max-width:768px) {
+  .app-layout {
+    width: 80%;
+    display: block;
+     
+  }
+}
+
+@media screen and (max-width:580px) {
+  .app-layout {
+    width: 100%;
+    display: block;
+     
+  }
+}
+
+@media screen and (max-width:415px) {
+  .app-layout {
+    width: 100%;
+    display: block; 
+  }
+  .businessName { 
+  font-Size: 15px;
+  font-Weight: 300;
+}
+}
+
+/* --- INVOICEFORM ---*/
+.sectionStyle  {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+
+.labelStyle {
+  display: block;
+  font-size: 12px;
+  color: #4a5568;
+  margin-bottom: 4px;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.inputStyle {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+
+.colHeader {
+  font-size: 11px;
+  color: #a0aec0;
+  font-weight: 600;
+}
+
+.addBtnStyle{
+  margin-Top: 8px;
+  width: 100%;
+  padding: 8px;
+  border: 1px dashed #cbd5e0;
+  border-Radius: 8px;
+  background: none;
+  cursor: pointer;
+  color: #718096;
+  font-Size: 13px;
+}
+
+.uploadBtnStyle {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px dashed #abbaca;
+  border-Radius: 8px;
+  cursor: pointer;
+  font-Size: 13px;
+  color: #496e78;
+  background: #f2f5f7;
+}
+
+/* ---InvoicePreveiw--- */
+
+.previewCard {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-Radius: 12px;
+  padding: 32px;
+}
+
+.businessName { 
+  font-Size: 20px;
+  font-Weight: 700; 
+  color: #1a202c;
+}
+.thStyle {
+  text-Align: left;
+  padding: 8px 0;
+  color: #a0aec0;
+  font-Weight: 600;
+  font-Size: 11px;
+  text-Transform: uppercase;
+}
+
+
+.tdStyle {
+  padding: 10px 0;
+  color: #4a5568;
+}
+
+.printBtn {
+  width: 100%;
+  margin-Top: 12px;
+  padding: 12px;
+  background: #3182ce;
+  color: #fff;
+  border: none;
+  border-Radius: 8px;
+  font-Size: 14px;
+  font-Weight: 600;
+  cursor: pointer;
+}
+
+
+
+/* --- PRINT STYLES ---
+   Everything inside @media print only applies when printing.
+   The browser ignores it during normal viewing. */
+@media print {
+
+  /* Hide the form (left column) and the print button when printing */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Make the invoice preview fill the full page */
+  .print-area {
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+
+  /* Remove the two-column grid — just one full-width column when printing */
+  .invoicePrintlayout {
+    display: block !important;
+  }
+
+  /* Clean white background for print */
+  body {
+    background: white;
+  }
+}
