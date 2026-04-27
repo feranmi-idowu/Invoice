@@ -17,7 +17,7 @@ function InvoicePreview({ business, client, items, logo }) {
   })
 
   return (
-    <div style={{ position: 'sticky', top: '20px' }}>
+    <div style={{ position: 'sticky', top: '40px' }}>
       {/* position: sticky keeps the preview visible as you scroll the form */}
       <div id="invoice-preview" className="previewCard">
 

@@ -7,6 +7,7 @@ import { useState } from 'react'
 // We import our two child components (we'll create these next).
 import InvoiceForm from '../src/components/InvoiceForm'
 import InvoicePreview from '../src/components/InvoicePreview'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -43,7 +44,8 @@ function App() {
 
 
   return (
-    <div className="app-layout invoicePrintlayout"
+    <div>
+      <div className="app-layout invoicePrintlayout"
       >
 
       {/* LEFT SIDE is the form.
@@ -70,8 +72,10 @@ function App() {
         items={items}
         logo={logo}
       />
-
     </div>
+    <Footer className="no-print"/>
+    </div>
+    
   )
 }
 

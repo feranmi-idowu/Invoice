@@ -189,3 +189,86 @@ body {
     background: white;
   }
 }
+
+
+.footerStyle  {
+  
+ text-align: center;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.footerPic-container {
+  border: 6px solid #3876b9;
+  border-Radius: 100%;
+  width: 150px;
+  height: 165px;
+  margin: 0 auto;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+.footerPic {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  image-rendering: auto;
+}
+
+/* TITLE */
+.contact-title {
+  font-Size: 30px;      
+  font-weight: 700;         /* font-bold */
+  margin-bottom: 20px;
+  margin-top: 20px;   /* mb-6 */
+}
+
+/* LINKS WRAPPER */
+.contact-links {
+  display: flex;
+   align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;     
+
+  margin: 40px;
+
+}
+
+/* ICON LINKS */
+.contact-link {
+  font-size: 15px;
+display: flex;
+flex-direction: column; /* Stacks Icon on top of Text */
+  align-items: center;    /* Centers them horizontally */
+  justify-content: center;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.5s ease;
+  margin: 10px;
+}
+
+
+
+.contact-link:hover {
+  color: #818cf8;           /* indigo-400 */
+}
+
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:415px) {
+  .app-layout {
+    width: 100%;
+    display: block; 
+  }
+  
+}
