@@ -228,25 +228,25 @@ body {
 /* LINKS WRAPPER */
 .contact-links {
   display: flex;
-   align-items: center;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;     
-
-  margin: 40px;
-
+  width: 80%;
+  margin: 0 auto;
 }
 
 /* ICON LINKS */
 .contact-link {
   font-size: 15px;
-display: flex;
-flex-direction: column; /* Stacks Icon on top of Text */
+  display: flex;
+  flex-direction: column; /* Stacks Icon on top of Text */
   align-items: center;    /* Centers them horizontally */
   justify-content: center;
   color: inherit;
   text-decoration: none;
   transition: color 0.5s ease;
-  margin: 10px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 
@@ -265,10 +265,24 @@ footer {
   margin: 0 auto;
 }
 
-@media screen and (max-width:415px) {
-  .app-layout {
-    width: 100%;
-    display: block; 
+@media screen and (max-width:768px) {
+  footer {
+    width: 80%;
+    display: block;
+     
+  }
+}
+
+
+@media screen and (max-width:425px) {
+  footer {
+    width: 80%;
+    margin: 0 auto;
+    
+  }
+
+  .contact-link {
+  margin: 0 auto;
   }
   
 }
