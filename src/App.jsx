@@ -8,6 +8,8 @@ import { useState } from 'react'
 import InvoiceForm from '../src/components/InvoiceForm'
 import InvoicePreview from '../src/components/InvoicePreview'
 import Footer from './components/Footer'
+import Navbar from './components/NavBar'
+import Hero from './components/Hero'
 
 function App() {
 
@@ -45,9 +47,10 @@ function App() {
 
   return (
     <div>
-      <div className="app-layout invoicePrintlayout"
-      >
-
+      <Navbar />
+      <Hero />
+      <div className="app-layout invoicePrintlayout">
+      
       {/* LEFT SIDE is the form.
           We pass 'business', 'setBusiness' etc. as props.
           The form will call these setter functions when the user types. */}

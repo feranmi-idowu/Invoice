@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import { MdDeleteForever } from "react-icons/md";
 
 // This component receives props from App.jsx.
 // component receives props from App.jsx. and destructures them directly in the function signature cleaner to read.
@@ -71,7 +72,7 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
    }
 
    return (
-    <div>
+    <div id="form">
 
       {/* --- BUSINESS INFO SECTION --- */}
       <motion.div 
@@ -230,7 +231,7 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
                 onClick={() => removeItem(item.id)}
                 style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#e53e3e', fontSize: '18px' }}
               >
-                ×
+                <MdDeleteForever/>
               </button>
             )}
           </div>

@@ -1,7 +1,3 @@
-/* src/index.css */
-
-/* This removes the default margin/padding browsers add to every page.
-   Without this, your app would have annoying white gaps around the edges. */
 * {
   margin: 0;
   padding: 0;
@@ -10,16 +6,175 @@
 
 body {
   font-family: sans-serif;
-  background-color: #f4f6f9; /* light grey page background */
+  background-color: #cdf63b; 
   color: #111;
-  min-height: 100vh; /* makes the page fill the full screen height */
+  min-height: 100vh; 
 }
+
+/* navbar */
+.navbar {
+  width: 100%;
+  padding: 16px 24px;
+  background: #fff;
+  border-bottom: 2px solid #cdf63b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-btn {
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.desktop-btn {
+  display: block;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  transition: 0.3s;
+}
+
+/* harmburger animation*/
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* for mobiles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .desktop-btn {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    /* Hidden by default */
+    transform: translateY(-200%);
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+/* Hero */
+.hero {
+  padding: 80px 40px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.primary-btn {
+  padding: 12px 20px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.secondary-btn {
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid #cdf63b;
+  border-radius: 6px;
+}
+
 .app-layout {
   max-Width: 1100px;   /* stops the layout from getting too wide on large screens*/
-  margin: 40px auto;  /* centres it on the page*/
+  margin: 40px auto;  
   padding: 0 20px;    /* breathing room on small screens*/
   display: grid;
-  grid-template-columns: 1fr 1fr; /* two equal columns*/
+  grid-template-columns: 1fr 1fr; 
   gap: 24px;
 }
 @media screen and (max-width:768px) {
@@ -49,10 +204,10 @@ body {
 }
 }
 
-/* --- INVOICEFORM ---*/
+/* invoice form */
 .sectionStyle  {
   background: #fff;
-  border: 1px solid #e2e8f0;
+  border: 2px solid #3b82f6;
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 16px;
@@ -116,11 +271,11 @@ body {
   background: #f2f5f7;
 }
 
-/* ---InvoicePreveiw--- */
+/* invoice Preveiw */
 
 .previewCard {
   background: #fff;
-  border: 1px solid #e2e8f0;
+  border: 2px solid #3b82f6;
   border-Radius: 12px;
   padding: 32px;
 }
@@ -149,7 +304,7 @@ body {
   width: 100%;
   margin-Top: 12px;
   padding: 12px;
-  background: #3182ce;
+  background: #3b82f6;
   color: #fff;
   border: none;
   border-Radius: 8px;
@@ -160,8 +315,7 @@ body {
 
 
 
-/* --- PRINT STYLES ---
-   Everything inside @media print only applies when printing.
+/* Everything inside @media print only applies when printing.
    The browser ignores it during normal viewing. */
 @media print {
 
@@ -190,9 +344,8 @@ body {
   }
 }
 
-
+/* footer */
 .footerStyle  {
-  
  text-align: center;
   background: #fff;
   border: 1px solid #e2e8f0;
@@ -201,7 +354,7 @@ body {
   margin-bottom: 16px;
 }
 .footerPic-container {
-  border: 6px solid #3876b9;
+  border: 6px solid #3b82f6;
   border-Radius: 100%;
   width: 150px;
   height: 165px;
@@ -250,7 +403,7 @@ body {
 
 
 .contact-link:hover {
-  color: #818cf8;           /* indigo-400 */
+  color: #cdf63b;           /* indigo-400 */
 }
 
 
