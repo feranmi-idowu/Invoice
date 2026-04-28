@@ -110,7 +110,7 @@ function InvoicePreview({ business, client, items, logo }) {
       </div>
 
       {/* PRINT BUTTON */}
-      <button onClick={() => window.print()} className="printBtn no-print">
+      <button onClick={() => window.print()} className="printBtn no-print" id="print">
         Print / Save as PDF
       </button>
       

@@ -81,7 +81,7 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
       transition={{ duration: 0.7 }}     // Animation speed
       //viewport={{ once: true }}          // Only animate once
       className="sectionStyle">
-        <h3 className="sectionTitle">Your business</h3>
+        <h3 className="sectionTitle">Your business details</h3>
 
         <label className="labelStyle">Business name</label>
         <input

@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => {
   return (
     <section id="hero"
-    className="hero">
+    className="hero no-print">
       <div className="hero-content">
         <h1>Create Professional Invoices in Seconds</h1>
         <p>
@@ -11,8 +11,8 @@ const Hero = () => {
         </p>
 
         <div className="hero-buttons">
-          <button className="primary-btn">Create Invoice</button>
-          <button className="secondary-btn">See Demo</button>
+          <a href="#form"><button className="primary-btn" >Create Invoice</button></a>
+          <a onClick={() => window.print()}><button className="secondary-btn">See Demo</button></a>
         </div>
       </div>
     </section>

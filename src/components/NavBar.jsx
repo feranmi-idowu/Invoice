@@ -6,18 +6,18 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar no-print">
       <div className="nav-container">
         <h2 className="logo">InvoiceGen</h2>
 
         {/* Desktop Links */}
         <ul className={`nav-links ${isOpen ? "active" : ""}`}>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#form">Forms</a></li>
-          <li><a href="#preview">Preview</a></li>
+          <li><a href="#hero" onClick={() => setIsOpen(false)}>Home</a></li>
+          <li><a href="#form" onClick={() => setIsOpen(false)} >Forms</a></li>
+          <li><a href="#preview" onClick={() => setIsOpen(false)}>Preview</a></li>
         </ul>
 
-        <button className="nav-btn desktop-btn">Get Started</button>
+        <a href="#contact"><button className="nav-btn desktop-btn">Contact</button></a>
 
         {/* Hamburger */}
         <div
