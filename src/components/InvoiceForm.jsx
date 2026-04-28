@@ -1,4 +1,5 @@
 
+import { motion } from "framer-motion";
 
 // This component receives props from App.jsx.
 // component receives props from App.jsx. and destructures them directly in the function signature cleaner to read.
@@ -73,7 +74,12 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
     <div>
 
       {/* --- BUSINESS INFO SECTION --- */}
-      <div className="sectionStyle">
+      <motion.div 
+      initial={{ x: -80, opacity: 0 }}   // Start state
+      whileInView={{ x: 0, opacity: 1 }} // End state when scrolled to
+      transition={{ duration: 0.7 }}     // Animation speed
+      //viewport={{ once: true }}          // Only animate once
+      className="sectionStyle">
         <h3 className="sectionTitle">Your business</h3>
 
         <label className="labelStyle">Business name</label>
@@ -101,10 +107,15 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
           onChange={e => handleBusinessChange('address', e.target.value)}
           placeholder="12 Victoria Island, Lagos"
         />
-      </div>
+      </motion.div>
 
       {/* --- LOGO UPLOAD SECTION --- */}
-      <div className="sectionStyle">
+      <motion.div 
+        initial={{ x: -85, opacity: 0 }}   // Start state
+        whileInView={{ x: 0, opacity: 1 }} // End state when scrolled to
+        transition={{ duration: 1.1 }}     // Animation speed
+        //viewport={{ once: true }}   
+        className="sectionStyle">
         <h3 className="sectionTitle">Business logo</h3>
       
         {/* This hidden file input does the actual work.
@@ -140,10 +151,15 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
             </button>
           </div>
         )}
-      </div>
+      </motion.div>
 
       {/* --- CLIENT INFO SECTION --- */}
-      <div className="sectionStyle">
+      <motion.div 
+        initial={{ x: -90, opacity: 0 }}   // Start state
+        whileInView={{ x: 0, opacity: 1 }} // End state when scrolled to
+        transition={{ duration: 1.5 }}     // Animation speed
+        //viewport={{ once: true }}  
+        className="sectionStyle">
         <h3 className="sectionTitle">Client details</h3>
 
         <label className="labelStyle">Client name</label>
@@ -161,10 +177,14 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
           onChange={e => handleClientChange('email', e.target.value)}
           placeholder="accounts@client.com"
         />
-      </div>
+      </motion.div>
 
       {/* --- LINE ITEMS SECTION --- */}
-      <div className="sectionStyle">
+      <motion.div 
+        initial={{ x: -95, opacity: 0 }}   // Start state
+        whileInView={{ x: 0, opacity: 1 }} // End state when scrolled to
+        transition={{ duration: 1.9 }}
+      className="sectionStyle">
         <h3 className="sectionTitle">Line items</h3>
 
         {/* Column headers */}
@@ -217,7 +237,7 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
         ))}
 
         <button onClick={addItem} className="addBtnStyle">+ Add item</button>
-      </div>
+      </motion.div>
 
     </div>
   )

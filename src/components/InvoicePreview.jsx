@@ -1,5 +1,5 @@
 // src/components/InvoicePreview.jsx
-
+import { motion } from "framer-motion"
 
 function InvoicePreview({ business, client, items, logo }) {
 
@@ -17,7 +17,12 @@ function InvoicePreview({ business, client, items, logo }) {
   })
 
   return (
-    <div style={{ position: 'sticky', top: '40px' }}>
+    <motion.div 
+      initial={{ x: 95, y:95, opacity: 0,}}   // Start state
+      whileInView={{ x: 0, y: 0, opacity: 1 }} // End state when scrolled to
+      transition={{ duration: 2.3 }}
+    
+      style={{ position: 'sticky', top: '40px' }}>
       {/* position: sticky keeps the preview visible as you scroll the form */}
       <div id="invoice-preview" className="previewCard">
 
@@ -108,7 +113,7 @@ function InvoicePreview({ business, client, items, logo }) {
         Print / Save as PDF
       </button>
       
-    </div>
+    </motion.div>
   )
 }
 
