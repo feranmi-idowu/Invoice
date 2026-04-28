@@ -227,12 +227,11 @@ body {
 
 /* LINKS WRAPPER */
 .contact-links {
-  display: flex;
+  display: grid;
   align-items: center;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-between;     
-  width: 80%;
-  margin: 0 auto;
+  margin: 40px;
 }
 
 /* ICON LINKS */
@@ -245,8 +244,7 @@ body {
   color: inherit;
   text-decoration: none;
   transition: color 0.5s ease;
-  width: 80%;
-  margin: 0 auto;
+  margin: 10px;
 }
 
 
@@ -273,10 +271,21 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .contact-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media screen and (max-width:425px) {
   footer {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     
   }
