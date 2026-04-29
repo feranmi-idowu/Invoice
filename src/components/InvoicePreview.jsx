@@ -19,7 +19,7 @@ function InvoicePreview({ business, client, items, logo }) {
   return (
     <motion.div 
       id="preview"
-      initial={{ x: 95, y:95, opacity: 0,}}   // Start state
+      initial={{ x: 20, y:95, opacity: 0,}}   // Start state
       whileInView={{ x: 0, y: 0, opacity: 1 }} // End state when scrolled to
       transition={{ duration: 2.3 }}
     

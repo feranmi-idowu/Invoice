@@ -1,13 +1,10 @@
-
 import { motion } from "framer-motion";
 import { MdDeleteForever } from "react-icons/md";
 
-// This component receives props from App.jsx.
 // component receives props from App.jsx. and destructures them directly in the function signature cleaner to read.
 function InvoiceForm({ business, setBusiness, client, setClient, items, setItems,logo, setLogo }) {
 
   // HANDLERS
-
   // 'field' is which key to update (e.g. 'name', 'email', 'address')
   // 'value' is what being typed
   // The spread operator { ...business } copies all existing business data,
@@ -21,7 +18,7 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
     setClient({ ...client, [field]: value })
   }
 
-  // --- HANDLER: when the user types in a line item field ---
+  //HANDLER: when the user types in a line item field
   // 'id' identifies which row changed
   // 'field' is 'description', 'qty', or 'price'
   const handleItemChange = (id, field, value) => {
@@ -34,7 +31,7 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
     setItems(updated)
   }
 
-  // --- HANDLER: add a new empty row ---
+  //HANDLER: add a new empty row
   const addItem = () => {
     const newItem = {
       id: Date.now(), // Date.now() gives a unique number — good enough for IDs here
@@ -45,12 +42,12 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
     setItems([...items, newItem]) // spread existing items, add the new one at the end
   }
 
-  // --- HANDLER: remove a row by id ---
+  //HANDLER: remove a row by id
   const removeItem = (id) => {
     setItems(items.filter(item => item.id !== id)) // keep everything EXCEPT this id
   }
 
-   // --- HANDLER: when the user selects an image file ---
+   //HANDLER: when the user selects an image file
    const handleLogoUpload = (e) => {
      const file = e.target.files[0] // files[0] is the first (and only) file selected
    
@@ -74,11 +71,11 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
    return (
     <div id="form">
 
-      {/* --- BUSINESS INFO SECTION --- */}
+      {/* BUSINESS INFO SECTION */}
       <motion.div 
-      initial={{ x: -80, opacity: 0 }}   // Start state
-      whileInView={{ x: 0, opacity: 1 }} // End state when scrolled to
-      transition={{ duration: 0.7 }}     // Animation speed
+      initial={{ x: -80, opacity: 0 }}   
+      whileInView={{ x: 0, opacity: 1 }} 
+      transition={{ duration: 0.7 }}     
       //viewport={{ once: true }}          // Only animate once
       className="sectionStyle">
         <h3 className="sectionTitle">Your business details</h3>
@@ -110,11 +107,11 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
         />
       </motion.div>
 
-      {/* --- LOGO UPLOAD SECTION --- */}
+      {/* LOGO UPLOAD SECTION */}
       <motion.div 
-        initial={{ x: -85, opacity: 0 }}   // Start state
-        whileInView={{ x: 0, opacity: 1 }} // End state when scrolled to
-        transition={{ duration: 1.1 }}     // Animation speed
+        initial={{ x: -85, opacity: 0 }}   
+        whileInView={{ x: 0, opacity: 1 }} 
+        transition={{ duration: 1.1 }}     
         //viewport={{ once: true }}   
         className="sectionStyle">
         <h3 className="sectionTitle">Business logo</h3>
@@ -156,9 +153,9 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
 
       {/* --- CLIENT INFO SECTION --- */}
       <motion.div 
-        initial={{ x: -90, opacity: 0 }}   // Start state
-        whileInView={{ x: 0, opacity: 1 }} // End state when scrolled to
-        transition={{ duration: 1.5 }}     // Animation speed
+        initial={{ x: -90, opacity: 0 }}  
+        whileInView={{ x: 0, opacity: 1 }} 
+        transition={{ duration: 1.5 }}     
         //viewport={{ once: true }}  
         className="sectionStyle">
         <h3 className="sectionTitle">Client details</h3>
@@ -196,9 +193,7 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
           
         </div>
 
-        {/* items.map() renders one row for every item in the array.
-            The 'key' prop is required by React when rendering lists —
-            it helps React track which item is which when things change. */}
+        {/* items.map() renders one row for every item in the array. The 'key' prop is required by React when rendering lists. it helps React track which item is which when things change. */}
         {items.map(item => (
           <div key={item.id} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 32px', gap: '8px', marginBottom: '8px' }}>
 
