@@ -24,7 +24,7 @@ function InvoicePreview({ business, client, items, logo }) {
   const handleDownload = () => {
     const element = contentRef.current;
     const options = {
-      filename: 'my-report.pdf',
+      filename: 'my-invoice.pdf',
       margin: 1,
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
