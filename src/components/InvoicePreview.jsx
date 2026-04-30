@@ -1,5 +1,7 @@
 // src/components/InvoicePreview.jsx
 import { motion } from "framer-motion"
+import html2pdf from 'html2pdf.js';
+import React, { useRef } from 'react';
 
 function InvoicePreview({ business, client, items, logo }) {
 
@@ -16,16 +18,31 @@ function InvoicePreview({ business, client, items, logo }) {
     day: 'numeric', month: 'short', year: 'numeric'
   })
 
+
+  const contentRef = useRef();
+
+  const handleDownload = () => {
+    const element = contentRef.current;
+    const options = {
+      filename: 'my-report.pdf',
+      margin: 1,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(options).from(element).save();
+  };
+
   return (
     <motion.div 
       id="preview"
       initial={{ x: 20, y:95, opacity: 0,}}   // Start state
       whileInView={{ x: 0, y: 0, opacity: 1 }} // End state when scrolled to
       transition={{ duration: 2.3 }}
-    
       style={{ position: 'sticky', top: '40px' }}>
       {/* position: sticky keeps the preview visible as you scroll the form */}
-      <div id="invoice-preview" className="previewCard">
+      <div id="invoice-preview" className="previewCard" ref={contentRef}>
 
         {/* HEADER: logo + business name + invoice meta */}
         
@@ -110,8 +127,8 @@ function InvoicePreview({ business, client, items, logo }) {
       </div>
 
       {/* PRINT BUTTON */}
-      <button onClick={() => window.print()} className="printBtn no-print" id="print">
-        Print / Save as PDF
+      <button /*onClick={() => window.print()*/ onClick={handleDownload} className="printBtn no-print" id="print">
+        Save as PDF
       </button>
       
     </motion.div>
