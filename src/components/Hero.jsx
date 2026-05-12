@@ -12,7 +12,7 @@ const Hero = () => {
 
         <div className="hero-buttons">
           <a href="#form"><button className="primary-btn" >Create Invoice</button></a>
-          <a onClick={() => window.print()}><button className="secondary-btn">See Demo</button></a>
+          <a onClick={() => window.print()}><button className="secondary-btn">See Print Preview</button></a>
         </div>
       </div>
     </section>
