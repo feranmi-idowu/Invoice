@@ -1,5 +1,6 @@
 
 import { useState } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 import InvoiceForm from '../src/components/InvoiceForm'
 import InvoicePreview from '../src/components/InvoicePreview'
@@ -59,6 +60,7 @@ function App() {
       />
     </div>
     <Footer className="no-print"/>
+    <Analytics />
     </div>
     
   )
