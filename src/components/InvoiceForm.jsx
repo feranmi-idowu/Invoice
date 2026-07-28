@@ -84,8 +84,6 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
         <input
           className="inputStyle"
           value={business.name}
-          // onChange fires every time the user types a character.
-          // e.target.value is what's currently in the input box.
           onChange={e => handleBusinessChange('name', e.target.value)}
           placeholder="e.g. Ayobami Designs"
         />
@@ -117,13 +115,13 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
         <h3 className="sectionTitle">Business logo</h3>
       
         {/* This hidden file input does the actual work.
-          We style a visible button and connect it to this input using a ref trick below. */}
+          style a visible button and connect it to this input using a ref trick below. */}
         <input
           id="logo-upload"
           type="file"
           accept="image/*"   // only allow image files (png, jpg, svg, etc.)
           onChange={handleLogoUpload}
-          style={{ display: 'none' }} // hidden — we click it via the label below
+          style={{ display: 'none' }}
         />
       
         {/* Clicking this label triggers the hidden file input above.
@@ -193,7 +191,6 @@ function InvoiceForm({ business, setBusiness, client, setClient, items, setItems
           
         </div>
 
-        {/* items.map() renders one row for every item in the array. The 'key' prop is required by React when rendering lists. it helps React track which item is which when things change. */}
         {items.map(item => (
           <div key={item.id} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 32px', gap: '8px', marginBottom: '8px' }}>
 

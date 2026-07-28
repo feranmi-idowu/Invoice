@@ -1,11 +1,12 @@
-
 import { useState } from 'react'
 
 import InvoiceForm from '../src/components/InvoiceForm'
 import InvoicePreview from '../src/components/InvoicePreview'
+import TemplateCarousel from './components/TemplateCarousel'
 import Footer from './components/Footer'
 import Navbar from './components/NavBar'
 import Hero from './components/Hero'
+import { DEFAULT_TEMPLATE_ID } from './templates/templateConfig'
 
 function App() {
 
@@ -30,10 +31,20 @@ function App() {
     { id: 1, description: '', quantity: 1, price: 0 }
   ])
 
+  // --- TEMPLATE SELECTION STATE ---
+  // Holds the id of whichever template card the user picked in the carousel
+  // (e.g. 'classic', 'modern'). InvoicePreview uses this to decide which
+  // template component to render.
+  const [templateId, setTemplateId] = useState(DEFAULT_TEMPLATE_ID)
+
   return (
     <div>
       <Navbar />
       <Hero />
+
+      {/* Template picker — sits between the hero and the form/preview area */}
+      <TemplateCarousel selectedId={templateId} onSelect={setTemplateId} />
+
       <div className="app-layout invoicePrintlayout">
       
       {/* LEFT SIDE is the form. We pass 'business', 'setBusiness' etc. as props. The form will call these setter functions when the user types. */}
@@ -56,6 +67,7 @@ function App() {
         client={client}
         items={items}
         logo={logo}
+        templateId={templateId}
       />
     </div>
     <Footer className="no-print"/>
